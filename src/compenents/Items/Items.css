@@ -1,0 +1,34 @@
+.Link{
+    width: 100%;
+}
+
+.aCard{
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 10px 10px 25px .5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 450px;
+    justify-content: space-between;
+    padding-bottom: 25px;
+    width: 240px;
+}
+
+.aCard img{
+    margin-bottom: 10px;
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+}
+
+.aCard p, .aCard h3{
+    padding: 0 15px;
+}
+
+.aCard-texts{
+    height: 190px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

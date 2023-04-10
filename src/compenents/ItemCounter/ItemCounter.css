@@ -1,0 +1,29 @@
+
+
+.ItemCounter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    gap: 10px;
+}
+
+.ItemCounter button{
+    font-size: .8rem;
+    height: 35px;
+}
+
+.ItemCounter p {
+    background-color: #ffffff;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    width: 35px;
+    height: 35px;
+    margin: 0;
+    padding: 0;
+}
+

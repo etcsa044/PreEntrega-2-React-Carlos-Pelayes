@@ -1,0 +1,24 @@
+
+
+#root {
+  margin: 0 auto;
+  max-width: 1920px;
+  text-align: center;
+  width: 100%;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+
+
+ul, ol{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+

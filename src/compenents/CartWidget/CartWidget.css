@@ -1,0 +1,19 @@
+
+
+.cart{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.cart p{
+    background-color: black;
+    color: #ffffff;
+    height: 30px;
+    margin: 0;
+    padding-top: 2px;
+    font-weight: 700;
+    width: 30px;
+    border-radius: 50%;
+}
