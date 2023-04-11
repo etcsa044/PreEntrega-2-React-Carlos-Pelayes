@@ -6,9 +6,10 @@
     border-radius: 15px;
     display: flex;
     flex-wrap: wrap;
-    gap:25px;
+    gap:15px;
     justify-content: space-evenly;
-    padding: 20px 0;
+    min-height: 480px;
+    padding: 20px 15px;
     width: 90%;
 }
 

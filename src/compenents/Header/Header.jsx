@@ -2,13 +2,21 @@ import "./Header.css"
 import Logo from "../Logo/Logo.jsx"
 import Navbar from "../NavBar/NavBar";
 import CartWidget from "../CartWidget/CartWidget";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-    return(
+    return (
         <header>
-            <Logo />
+
+            <Link className="header-Link" to="/">
+                <Logo />
+            </Link>
+
             <Navbar />
-            <CartWidget />
+
+            <Link className="header-Link" to="/">
+                <CartWidget />
+            </Link>
         </header>
     )
 }

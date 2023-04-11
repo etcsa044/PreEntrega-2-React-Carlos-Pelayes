@@ -18,7 +18,7 @@ export const Item = ({
     return (
 
         <div className="aCard">
-            <Link className="Link" to="/detail">
+            <Link className="Link" to={`/detail/${id}`}>
                 <img src={img} alt="Foto Kayak" />
             </Link>
             <div className="aCard-texts">

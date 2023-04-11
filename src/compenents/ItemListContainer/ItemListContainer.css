@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: center;
     gap: 30px;
+    min-height: 480px;
     padding: 30px 25px;
     width: 100%;
 }
