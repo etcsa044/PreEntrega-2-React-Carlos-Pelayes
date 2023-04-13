@@ -1,34 +1,8 @@
 import { NavLink } from "react-router-dom";
 import "./NavBar.css"
-import { mockFetch } from "../MockApi/MockFetch";
-import { useEffect, useState } from "react";
 
 
 const Navbar = () => {
-
-    // const [products, setProducts] = useState([]);
-    // const [loading, setLoading] = useState(true);
-
-
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         try {
-    //             const data = await mockFetch();
-    //             setProducts(data);
-    //             setLoading(false);
-    //         } catch (error) {
-    //             console.log(error);
-    //         }
-    //     };
-    //     setTimeout(() => {
-    //         fetchData();
-    //     },2000);
-    // }, []);
-
-    // const verificacion = products.map(e => e.category )
-
-    // const air = products;
-    // const ground = products.map(e => e.category)
     
     return(
         <nav>
