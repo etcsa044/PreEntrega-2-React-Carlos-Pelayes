@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { mockFetch } from "../MockApi/MockFetch";
 import { ItemList } from "../ItemList/ItemList"
 import "./ItemListContainer.css"
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
 
@@ -9,12 +10,19 @@ const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    const {pcat} = useParams()
+
+    console.log("pcat desde el item list container" + pcat)
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const data = await mockFetch();
-                setProducts(data);
+                if(!pcat){
+                    setProducts(data);
+                }else{
+                    setProducts(data.filter(e => e.category === pcat))
+                }                
                 setLoading(false);
             } catch (error) {
                 console.log(error);
@@ -23,7 +31,7 @@ const ItemListContainer = () => {
         setTimeout(() => {
             fetchData();
         },2000);
-    }, []);
+    }, [pcat]);
 
 
 

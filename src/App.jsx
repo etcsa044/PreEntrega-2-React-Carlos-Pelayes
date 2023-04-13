@@ -16,9 +16,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<ItemListContainer />}/>
+        <Route path="/category/:pcat" element={<ItemListContainer />}/>          
         <Route path="/detail/:pid" element={<ItemDetailContainer />}/>          
-        <Route path="/groundActivities/" element={<ItemListContainer />}/>          
-        <Route path="/airActivities/" element={<ItemListContainer />}/>          
         <Route path="*" element={<Navigate to={"/"}/>}/>
       </Routes>
     </>
