@@ -26,7 +26,10 @@ export const Item = ({
                 <p>{description}</p>
                 <h3>$ {price}</h3>
             </div>
-            <ItemCounter stock={stock} initial={initial} />
+            {/* <ItemCounter stock={stock} initial={initial} /> */}
+            <Link className="Link" to={`/detail/${id}`}>
+                <button>Ver más...</button>
+            </Link>
         </div>
 
     )

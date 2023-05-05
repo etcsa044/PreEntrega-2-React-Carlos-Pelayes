@@ -12,8 +12,6 @@ const ItemListContainer = () => {
 
     const {pcat} = useParams()
 
-    console.log("pcat desde el item list container" + pcat)
-
     useEffect(() => {
         const fetchData = async () => {
             try {

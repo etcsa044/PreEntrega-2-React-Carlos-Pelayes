@@ -17,7 +17,10 @@ function App() {
       <Routes>
         <Route path="/" element={<ItemListContainer />}/>
         <Route path="/category/:pcat" element={<ItemListContainer />}/>          
-        <Route path="/detail/:pid" element={<ItemDetailContainer />}/>          
+        <Route path="/detail/:pid" element={<ItemDetailContainer />}/>
+        <Route path="/cart/"/>
+
+                  {/* Aqui quedamos trabajando, definimos una ruta Cart, pero aun no hay compenente */}
         <Route path="*" element={<Navigate to={"/"}/>}/>
       </Routes>
     </>

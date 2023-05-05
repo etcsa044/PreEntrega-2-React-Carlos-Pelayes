@@ -5,12 +5,12 @@ import { mockFetch } from "../MockApi/MockFetch";
 import "./ItemDetailContainer.css"
 import { useParams } from "react-router-dom";
 
-export const ItemDetailContainer = ({category}) => {
 
+export const ItemDetailContainer = () => {
 
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
-
+    const {pid} = useParams();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -27,8 +27,9 @@ export const ItemDetailContainer = ({category}) => {
         }, 0);
     }, []);   
 
+
     return (
-        <div>
+        <div className="prueba">
             {loading ?
                 (
                     <h2>Cargando...</h2>
@@ -37,16 +38,10 @@ export const ItemDetailContainer = ({category}) => {
                 (
                     
                     <section className="ItemDetailContainer">                        
-                        <ItemDetail products={products} />
+                        <ItemDetail products={products} pid={pid}/>
                     </section>
                 )
             }
         </div>);
+};
 
-
-    console.log(products)
-
-
-   
-
-}
