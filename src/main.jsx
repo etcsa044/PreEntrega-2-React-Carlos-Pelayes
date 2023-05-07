@@ -1,17 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
-import { CartContext } from './CartContext/CartContext'
+import { CartContextProvider } from './CartContext/CartContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  
+
+
   <React.StrictMode>
-  <CartContext.Provider value={[]}/>
+
     <BrowserRouter>
-      <App />
+      <CartContextProvider>
+        <App />
+      </CartContextProvider>
     </BrowserRouter>
-    <CartContext.Provider />
+
   </React.StrictMode>,
 )

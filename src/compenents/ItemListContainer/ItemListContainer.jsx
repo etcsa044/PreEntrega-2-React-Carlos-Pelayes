@@ -28,7 +28,7 @@ const ItemListContainer = () => {
         };
         setTimeout(() => {
             fetchData();
-        },2000);
+        },10);
     }, [pcat]);
 
 

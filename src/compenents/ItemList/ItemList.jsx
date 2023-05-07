@@ -13,10 +13,7 @@ products
 
     const pcat = useParams()
 
-    console.log("aqui" + pcat);
-
     const airActivities = products.filter(e => e.category == "airActivity");
-    console.log(airActivities)
     return (
 
         <section className="category">

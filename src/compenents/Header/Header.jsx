@@ -13,7 +13,7 @@ const Header = () => {
 
             <Navbar />
 
-            <Link className="header-Link" to="/">
+            <Link className="header-Link" to="/cart">
                 <CartWidget />
             </Link>
         </header>

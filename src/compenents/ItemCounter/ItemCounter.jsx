@@ -1,13 +1,10 @@
-import { useState } from "react"
-import "./ItemCounter.css"
+import { useState } from "react";
+import "./ItemCounter.css";
 import { Link } from "react-router-dom";
-
 
 export const ItemCounter = ({ stock = 5, initial = 0, onAdd, quantity }) => {
   const [counter, setCounter] = useState(initial);
-
-  // console.log(onAdd);
-
+  const [added, setAdded] = useState(false); // variable para controlar si se ha agregado el producto
 
   const increment = () => {
     if (counter < stock) {
@@ -21,22 +18,36 @@ export const ItemCounter = ({ stock = 5, initial = 0, onAdd, quantity }) => {
     }
   };
 
+  const handleAdd = () => {
+    if (counter > 0) {
+      setAdded(true); // marca que se ha agregado el producto
+      onAdd(counter);
+    }
+  };
+
   return (
     <div className="ItemCounter">
-      <button id="menos" onClick={decrement}>-</button>
-      <button id="mas" onClick={increment}>+</button>
+      <button id="menos" onClick={decrement}>
+        -
+      </button>
+      <button id="mas" onClick={increment}>
+        +
+      </button>
       <p id="contador">{counter}</p>
-      {counter > 0 ? (
-        <button id="add-btn-enabled" onClick={() => onAdd(counter)}>Agregar</button>
+      {added ? (
+        <button id="add-btn-enabled" onClick={() => onAdd(counter)}>
+          Agregar
+        </button>
       ) : (
-        <button id="add-btn" onClick={() => onAdd(counter)} disabled>Agregar</button>
+        <button id="add-btn" onClick={handleAdd} disabled={!counter}>
+          Agregar
+        </button>
       )}
-      {quantity > 0 ? (
+      {quantity > 0 && (
         <Link to={`/cart/`}>
           <button>Finalizar compra</button>
         </Link>
-
-      ) : null}
+      )}
     </div>
   );
 };
