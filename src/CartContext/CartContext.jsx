@@ -18,13 +18,23 @@ export const CartContextProvider = ({children})=>{
 
     }
 
-    // console.log("lista de productos del carro", cartList)
+    const cleanCart = ()=>{
+        setCartList([]);
+    }
+
+    const removeProduct = (id)=>{
+        console.log(cartList);
+        const aux = cartList.filter(e => e.producto.id != id);        
+        setCartList(aux);
+    }
 
 
     return(
         <CartContext.Provider value={{
             cartList,
-            addToCart
+            addToCart,
+            removeProduct,
+            cleanCart
         }}>
             {children}            
         </CartContext.Provider>
