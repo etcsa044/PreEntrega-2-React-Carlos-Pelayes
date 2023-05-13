@@ -4,12 +4,14 @@ import { useState } from "react";
 import { useCartContext } from "../../CartContext/CartContext";
 import "./ItemDetail.css"
 
-export const ItemDetail = ({ products }) => {
+export const ItemDetail = ({ product }) => {
+
   const { addToCart, cartList} = useCartContext()
   const [quantityAdded, setQuantityAdded] = useState(1);
 
+
   const handleAdd = (count) => {    
-    const index = cart.findIndex((e) => e.producto.id === prod.id);
+    const index = cart.findIndex((e) => e.producto.product.id === prod.product.id);
     if (index !== -1) {
       const repeated = cart[index];      
       repeated.quantity = count;
@@ -25,10 +27,7 @@ export const ItemDetail = ({ products }) => {
   const cart = cartList;
 
 
-
-  const productos = products;
-  const { pid } = useParams();
-  const prod = productos.find((e) => e.id == pid);
+  const prod = {...product}
 
   const productToAdd = {
     producto: prod,
@@ -37,16 +36,16 @@ export const ItemDetail = ({ products }) => {
 
   return (
     <article className="ItemDetail">
-      <img src={prod.imgHd} alt="" />
+      <img src={prod.product.imgHd} alt="" />
 
       <div className="ItemDescription">
-        <h3>{prod.title}</h3>
-        <p>{prod.detail}</p>
+        <h3>{prod.product.title}</h3>
+        <p>{prod.product.detail}</p>
       </div>
       <div>
         <ItemCounter
-          initial={1}
-          stock={prod.stock}
+          initial={prod.product.initial}
+          stock={prod.product.stock}
           onAdd={handleAdd}
           quantity={quantityAdded}
         />

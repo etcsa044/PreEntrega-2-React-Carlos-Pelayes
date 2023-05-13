@@ -2,30 +2,31 @@
 import { useEffect, useState } from "react";
 import { ItemDetail } from "../ItemDetail/ItemDetail"
 import { mockFetch } from "../MockApi/MockFetch";
-import "./ItemDetailContainer.css"
 import { useParams } from "react-router-dom";
+import {doc, getDoc, getFirestore} from "firebase/firestore";
+import "./ItemDetailContainer.css"
+import { initFireBase } from "../../firebase/config";
 
 
 export const ItemDetailContainer = () => {
-
-    const [products, setProducts] = useState([]);
+    const [product, setProduct] = useState({});
     const [loading, setLoading] = useState(true);
-    const {pid} = useParams();
+    const {pid} = useParams();  
 
-    useEffect(() => {
-        const fetchData = async () => {
+    useEffect(()=>{
+        const db = getFirestore();
+        const queryDoc = doc(db, "productos", pid);
+        async function traerProd (req, resp) {
             try {
-                const data = await mockFetch();
-                setProducts(data);
-                setLoading(false);
+              const resp = await getDoc(queryDoc);
+              setProduct({id:resp.id , ...resp.data()});
+              setLoading(false);
             } catch (error) {
                 console.log(error);
             }
-        };
-        setTimeout(() => {
-            fetchData();
-        }, 0);
-    }, []);   
+        }
+        traerProd();
+    }, []);
 
 
     return (
@@ -38,7 +39,7 @@ export const ItemDetailContainer = () => {
                 (
                     
                     <section className="ItemDetailContainer">                        
-                        <ItemDetail products={products} pid={pid}/>
+                        <ItemDetail product={{product}}/>
                     </section>
                 )
             }
