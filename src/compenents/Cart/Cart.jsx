@@ -7,11 +7,10 @@ export const Cart = () => {
 
   const { cartList, removeProduct, cleanCart } = useCartContext()
 
-  let subTotal = 0
   let total = 0
 
   cartList.map(e => {
-    total = total + e.producto.price * e.quantity
+    total = total + e.producto.product.price * e.quantity
 
   })
 
@@ -26,17 +25,22 @@ export const Cart = () => {
 
   return (
     <div className="contenedorCart">
-      <h1> Tu Carrito actual contiene: </h1>
+      {cartList.length == 0 ?
+      <h2>Tu Carrito está vacio:</h2>
+      
+      :
+      <h2>Tu Carrito actual contiene:</h2>}
+      
       <div>
         {cartList.map((product) => {
           let subTot = 0
-          subTot = subTot + product.producto.price * product.quantity
+          subTot = subTot + product.producto.product.price * product.quantity
           return (
-            <div key={product.producto.id}>
+            <div key={product.producto.product.id}>
               <div className="cartList" >
-                <p>{product.producto.title}</p>
+                <p>{product.producto.product.title}</p>
                 <p>{`cantidad ${product.quantity}`}</p>
-                <p>{`precio unidad: $${product.producto.price}`}</p>
+                <p>{`precio unidad: $${product.producto.product.price}`}</p>
                 <p id="subTotal">{`Sub Total:   $${subTot}`} <span className="span" onClick={() => handleRemove(product.producto.id)}>X</span></p>
               </div>
             </div>

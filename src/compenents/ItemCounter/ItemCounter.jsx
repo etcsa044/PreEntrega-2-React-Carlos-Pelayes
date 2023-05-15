@@ -25,12 +25,14 @@ export const ItemCounter = ({ stock = 5, initial = 0, onAdd, quantity }) => {
     }
   };
 
+
+
   return (
     <div className="ItemCounter">
       <button id="menos" onClick={decrement}>
         -
       </button>
-      <button id="mas" onClick={increment}>
+      <button id="mas" onClick={()=>{increment()}}>
         +
       </button>
       <p id="contador">{counter}</p>
@@ -43,7 +45,7 @@ export const ItemCounter = ({ stock = 5, initial = 0, onAdd, quantity }) => {
           Agregar
         </button>
       )}
-      {quantity > 0 && (
+      {quantity > 1 && (
         <Link to={`/cart/`}>
           <button>Finalizar compra</button>
         </Link>

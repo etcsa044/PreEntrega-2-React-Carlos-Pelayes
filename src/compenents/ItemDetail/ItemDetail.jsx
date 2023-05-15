@@ -7,7 +7,7 @@ import "./ItemDetail.css"
 export const ItemDetail = ({ product }) => {
 
   const { addToCart, cartList} = useCartContext()
-  const [quantityAdded, setQuantityAdded] = useState(1);
+  const [quantityAdded, setQuantityAdded] = useState(0);
 
 
   const handleAdd = (count) => {    
@@ -24,9 +24,8 @@ export const ItemDetail = ({ product }) => {
         setQuantityAdded(quantityAdded + count);
   };
 
+
   const cart = cartList;
-
-
   const prod = {...product}
 
   const productToAdd = {
