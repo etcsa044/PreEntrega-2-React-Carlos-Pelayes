@@ -3,7 +3,7 @@ import "./ItemCounter.css";
 import { Link } from "react-router-dom";
 
 export const ItemCounter = ({ stock = 5, initial = 0, onAdd, quantity }) => {
-  const [counter, setCounter] = useState(initial);
+  const [counter, setCounter] = useState(1);
   const [added, setAdded] = useState(false); // variable para controlar si se ha agregado el producto
 
   const increment = () => {
@@ -19,10 +19,8 @@ export const ItemCounter = ({ stock = 5, initial = 0, onAdd, quantity }) => {
   };
 
   const handleAdd = () => {
-    if (counter > 0) {
       setAdded(true); // marca que se ha agregado el producto
-      onAdd(counter);
-    }
+      onAdd(counter);    
   };
 
 
@@ -36,20 +34,16 @@ export const ItemCounter = ({ stock = 5, initial = 0, onAdd, quantity }) => {
         +
       </button>
       <p id="contador">{counter}</p>
-      {added ? (
-        <button id="add-btn-enabled" onClick={() => onAdd(counter)}>
-          Agregar
-        </button>
-      ) : (
-        <button id="add-btn" onClick={handleAdd} disabled={!counter}>
-          Agregar
-        </button>
-      )}
-      {quantity > 1 && (
+      
+      
+      <button id={`add-btn${!added ? "-enabled" : ""}`} onClick={() => handleAdd()} disabled = {counter == 0}>Agregar</button>
+
+        {added &&   
         <Link to={`/cart/`}>
           <button>Finalizar compra</button>
         </Link>
-      )}
+        }
+     
     </div>
   );
 };

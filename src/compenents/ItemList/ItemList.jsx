@@ -13,7 +13,7 @@ products
     return (
 
         <section className="category">
-            {products.products.map((e) => {
+            {products.map((e) => {
                 return <Item key={e.id} {...e} />;
             })}
         </section>

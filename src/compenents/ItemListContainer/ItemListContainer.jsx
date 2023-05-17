@@ -28,7 +28,7 @@ const ItemListContainer = () => {
           try {
             const snapshot = await getDocs(queryCollection);
             const productsData = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-    
+            console.log("prod data", productsData);
             setProducts(productsData);
             setLoading(false);
           } catch (error) {
@@ -49,7 +49,7 @@ const ItemListContainer = () => {
                 :
                 (
                     <div className="ItemlistContainer">
-                        <ItemList products={{products}} />
+                        <ItemList products={products} />
                     </div>
                 )
             }

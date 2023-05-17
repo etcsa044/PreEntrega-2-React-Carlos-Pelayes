@@ -39,7 +39,7 @@ export const ItemDetailContainer = () => {
                 (
                     
                     <section className="ItemDetailContainer">                        
-                        <ItemDetail product={{product}}/>
+                        <ItemDetail product={product}/>
                     </section>
                 )
             }

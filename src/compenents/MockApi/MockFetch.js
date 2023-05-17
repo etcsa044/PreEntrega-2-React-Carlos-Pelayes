@@ -58,7 +58,7 @@ const products = [
         img: "/img/sandBoard200x135.jpg",
         detail: "Practicar Sandboard en Mendoza es una emocionante experiencia de turismo aventura que combina la adrenalina del snowboard con la belleza del desierto. Con sus impresionantes dunas de arena, Mendoza ofrece un escenario perfecto para deslizarse sobre las crestas doradas y sentir la velocidad mientras se disfruta de las impresionantes vistas panorámicas del paisaje desértico. Los amantes de la aventura pueden desafiar sus habilidades en las altas dunas, experimentar la emoción de descender a toda velocidad y disfrutar de la sensación de libertad que ofrece esta actividad. Ya sea que seas un principiante entusiasta o un experto buscando un nuevo desafío, practicar sandboard en Mendoza es una actividad única que te permitirá combinar la emoción del deporte extremo con la belleza natural de la región. ¡Una experiencia inolvidable que seguramente aumentará la adrenalina de tu viaje de turismo aventura en Mendoza!",
         stock: 12,
-        initial: 4
+        initial: 1
     },
 
     // Kayak:
