@@ -11,11 +11,11 @@ export const Cart = () => {
 
 
 
-  const handleRemove = (e)=>{
+  const handleRemove = (e) => {
     removeProduct(e);
   }
 
-  const handleClean = (e)=>{
+  const handleClean = (e) => {
     cleanCart();
   }
 
@@ -23,13 +23,13 @@ export const Cart = () => {
   return (
     <div className="contenedorCart">
       {cartList.length == 0 ?
-      <h2>Tu Carrito está vacio:</h2>
-      
-      :
-      <h2>Tu Carrito actual contiene:</h2>}
-      
+        <h2>Tu Carrito está vacio:</h2>
+
+        :
+        <h2>Tu Carrito actual contiene:</h2>}
+
       <div>
-        {cartList.map((product) => {      
+        {cartList.map((product) => {
           let subTot = product.price * product.quantity
           return (
             <div key={product.id}>
@@ -42,11 +42,15 @@ export const Cart = () => {
             </div>
           );
         })}
-        <h2>{`Total de tu pedido $ ${total}`}</h2>
-        <Link >
-          <button>Finalizar Compra</button>
-        </Link>
-        <button onClick={()=>{handleClean()}}>Vaciar Carrito</button>
+        {total > 0 &&
+          <div>
+            <h2>{`Total de tu pedido $ ${total}`}</h2>
+            <Link to={"/checkout/"}>
+              <button>Finalizar Compra</button>
+            </Link>
+            <button onClick={() => { handleClean() }}>Vaciar Carrito</button>
+          </div>
+        }
       </div>
     </div>
   );

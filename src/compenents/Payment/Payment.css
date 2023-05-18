@@ -1,0 +1,32 @@
+
+
+.payment_form{
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;
+    width: 50%;
+}
+
+.payment_form input{
+    color: rgb(239, 221, 82);
+    text-align: center;
+}
+
+.info{
+    width: 100%;
+    display: flex;
+    gap: 5px
+}
+
+.info article input{
+    width: 100%;
+}
+
+#submit{
+    margin: 20px auto;
+    width: 50%;
+}
+
+button{
+    margin-top: 20px;
+}

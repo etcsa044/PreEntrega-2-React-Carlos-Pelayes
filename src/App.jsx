@@ -6,6 +6,8 @@ import ItemListContainer from "./compenents/ItemListContainer/ItemListContainer"
 import { ItemDetailContainer } from "./compenents/ItemDetailsContainer/ItemDetailContainer"
 import { Navigate, Route, Routes } from "react-router-dom"
 import {Cart} from "./compenents/Cart/Cart.jsx"
+import { CheckOut } from "./compenents/CheckOut/CheckOut.jsx"
+import { Payment } from "./compenents/Payment/Payment.jsx"
 
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
         <Route path="/category/:pcat" element={<ItemListContainer />}/>          
         <Route path="/detail/:pid" element={<ItemDetailContainer />}/>
         <Route path="/cart/" element={<Cart />}/>
+        <Route path="/checkout/" element={<CheckOut />}/>
+        <Route path="/payment/" element={<Payment />}/>
         <Route path="*" element={<Navigate to={"/"}/>}/>
       </Routes>
     </>
